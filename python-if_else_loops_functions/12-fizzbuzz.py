@@ -11,6 +11,5 @@ def fizzbuzz():
         else:
             print(i, end=" ")
 
-# Call the function to see the result
+# Example usage
 fizzbuzz()
-print()  # To add a newline at the end
