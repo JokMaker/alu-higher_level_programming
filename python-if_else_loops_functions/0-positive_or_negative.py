@@ -1,4 +1,14 @@
 #!/usr/bin/python3
 import random
+
 number = random.randint(-10, 10)
-print(f"{number} {'is positive' if number > 0 else 'is zero' if number == 0 else 'is negative'}")
+
+if number > 0:
+    status = "is positive"
+elif number == 0:
+    status = "is zero"
+else:
+    status = "is negative"
+
+print(f"{number} {status}")
+
