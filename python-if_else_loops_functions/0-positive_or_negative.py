@@ -11,4 +11,3 @@ else:
     status = "is negative"
 
 print(f"{number} {status}")
-
