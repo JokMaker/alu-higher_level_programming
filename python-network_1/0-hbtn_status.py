@@ -2,8 +2,11 @@
 import urllib.request
 
 url = 'https://alu-intranet.hbtn.io/status'
+headers = {'User-Agent': 'Mozilla/5.0'}
 
-with urllib.request.urlopen(url) as response:
+request = urllib.request.Request(url, headers=headers)
+
+with urllib.request.urlopen(request) as response:
     body = response.read()
 
 print("Body response:")
