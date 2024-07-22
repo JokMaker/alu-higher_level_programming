@@ -1,25 +1,22 @@
 #!/usr/bin/python3
 """A script that fetches from specified URLs and prints the response.
-- Uses the urllib package.
+- Uses the requests package.
 """
 
-import urllib.request
-import urllib.error
+import requests
 
 def fetch_status(url):
     """Fetches and prints the status of a given URL."""
     try:
-        with urllib.request.urlopen(url) as res:
-            content = res.read()
-            print(f"Fetching from: {url}")
-            print("Body response:")
-            print(f"\t- type: {type(content)}")
-            print(f"\t- content: {content}")
-            print(f"\t- utf8 content: {content.decode('utf-8')}")
-    except urllib.error.URLError as e:
-        print(f"URL Error: {e.reason}")
-    except Exception as e:
-        print(f"Error: {e}")
+        response = requests.get(url)
+        content = response.content
+        print(f"Fetching from: {url}")
+        print("Body response:")
+        print(f"\t- type: {type(content)}")
+        print(f"\t- content: {content}")
+        print(f"\t- utf8 content: {content.decode('utf-8')}")
+    except requests.RequestException as e:
+        print(f"Request Error: {e}")
 
 if __name__ == '__main__':
     # URL to fetch
