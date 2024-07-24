@@ -6,7 +6,7 @@
 import urllib.request
 
 url = 'https://intranet.hbtn.io/status'
-if url.startswitch('https://'):
+if url.startswith('https://'):
     url = 'https://intranet.hbtn.io/status'
 
 
